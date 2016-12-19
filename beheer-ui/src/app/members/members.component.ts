@@ -11,6 +11,7 @@ import { PlayerService } from './member.service';
 export class MembersComponent implements OnInit {
   members: Player[];
   selectedMember: Player;
+  newMember = new Player();
 
   constructor(
     private memberService : PlayerService
@@ -22,6 +23,10 @@ export class MembersComponent implements OnInit {
 
   onSelect(member : Player){
     this.selectedMember = member
+  }
+  
+  createMember(): void {
+    this.memberService.createPlayer(this.newMember);
   }
 
   getMembers(): void {

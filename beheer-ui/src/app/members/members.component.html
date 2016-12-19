@@ -1,5 +1,5 @@
 <div class="row">
-  <button class="btn btn-success pull-right" id="newMember">Nieuw lid</button>
+  
   <h1>Ledenadministratie</h1>
   <div class="col-md-12">
     <table class="table table-condensed table-striped">
@@ -13,6 +13,16 @@
           <th></th>
         </tr>
       </thead>
+      <tr>
+        <td><input [(ngModel)]="newMember.knsb" /></td>
+        <td><input [(ngModel)]="newMember.voorletters" /></td>
+        <td><input [(ngModel)]="newMember.voornaam" /></td>
+        <td><input [(ngModel)]="newMember.tussenvoegsel" /></td>
+        <td><input [(ngModel)]="newMember.achternaam" /></td>
+        <td>
+          <button class="btn btn-success pull-right" (click)=createMember()>Nieuw lid</button>
+        </td>
+      </tr>
       <tr *ngFor="let member of members">
         <td>{{member.knsb}}</td>
         <td>{{member.voorletters}}</td>

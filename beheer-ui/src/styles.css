@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: Arial;
+    font-size: 12pt;
+    padding-top: 51px;
+    margin: 0px;
+}
+
+a{
+    cursor: pointer;
+}

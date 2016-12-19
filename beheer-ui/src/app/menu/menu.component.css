@@ -1,0 +1,26 @@
+#menu{
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    color: #444;
+}
+
+.link, .title{
+    float: left;
+    width: auto;
+    padding: 20px;
+}
+.link:hover{
+    cursor: pointer;
+}
+.link.active{
+    background-color: #ddd;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 20px;
+}

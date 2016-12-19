@@ -1,0 +1,64 @@
+<div *ngIf="member" class="row hidden-print">
+  <div class="col-md-12">
+    <h1 class="hidden-print">Leden bewerken</h1>
+    <button routerLink="/members" class="btn btn-secondary">Terug</button>
+    <fieldset>
+      <!-- Form Name -->
+      <legend>
+        {{member.achternaam}}
+      </legend>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="memberKNSB">KNSB</label>
+        <div class="col-md-4">
+          <input id="memberKNSB" name="memberKNSB" type="text" placeholder="KNSB" class="form-control input-md" value="">{{member.knsb}}
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="memberInitials">Voorletter(s)</label>
+        <div class="col-md-4">
+          <input id="memberInitials" name="memberInitials" type="text" placeholder="Voorletter(s)" class="form-control input-md">{{member.voorletters}}
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="memberFirstname">Voornaam</label>
+        <div class="col-md-4">
+          <input id="memberFirstname" name="memberFirstname" type="text" placeholder="Voornaam" class="form-control input-md">{{member.voornaam}}
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="memberMiddlename">Tussenvoegsel</label>
+        <div class="col-md-4">
+          <input id="memberMiddlename" name="memberMiddlename" type="text" placeholder="Tussenvoegsel" class="form-control input-md">{{member.tussenvoegsel}}
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="memberSurname">Achternaam</label>
+        <div class="col-md-4">
+          <input id="memberSurname" name="memberSurname" type="text" placeholder="Achternaam" class="form-control input-md">          {{member.achternaam}}
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="send"></label>
+        <div class="col-md-4">
+          <button class="btn btn-success">Opslaan</button>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+</div>

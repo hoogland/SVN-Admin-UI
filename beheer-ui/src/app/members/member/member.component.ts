@@ -29,6 +29,11 @@ export class MemberComponent implements OnInit {
       });
   }
 
+    save(): void{
+    this.PlayerService.updatePlayer(this.member)
+      .then(() => this.goBack());
+  }
+
   goBack(): void {
     console.log("terug");
     this.location.back;

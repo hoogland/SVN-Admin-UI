@@ -8,6 +8,7 @@ import { Player } from '../Player';
 @Injectable()
 export class PlayerService {
   private apiUrl = "http://svn.local/API/v1/index.php/members";
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
 
@@ -21,6 +22,15 @@ export class PlayerService {
   getPlayer(id: number): Promise<Player> {
     return this.getPlayers()
       .then(players => players.find(player => player.id === id))
+  }
+
+  updatePlayer(player: Player): Promise<Player>{
+    const url = `${this.apiUrl}/${player.id}`;
+    return this.http 
+      .put(url, JSON.stringify(player), {headers: this.headers})
+      .toPromise()
+      .then(() => player)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

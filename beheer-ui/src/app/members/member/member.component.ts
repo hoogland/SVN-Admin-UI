@@ -29,7 +29,7 @@ export class MemberComponent implements OnInit {
       });
   }
 
-    save(): void{
+  save(): void {
     this.PlayerService.updatePlayer(this.member)
       .then(() => this.goBack());
   }

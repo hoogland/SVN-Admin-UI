@@ -29,7 +29,7 @@ export class PlayerService {
     return this.http
       .put(url, JSON.stringify(player), { headers: this.headers })
       .toPromise()
-      .then(() => player)
+      .then(res => res.json().data)
       .catch(this.handleError);
   }
 

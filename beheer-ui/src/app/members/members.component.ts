@@ -26,7 +26,11 @@ export class MembersComponent implements OnInit {
   }
   
   createMember(): void {
-    this.memberService.createPlayer(this.newMember);
+    this.memberService.createPlayer(this.newMember)
+      .then(player =>{
+        this.getMembers();
+        this.newMember = new Player();
+      });
   }
 
   getMembers(): void {

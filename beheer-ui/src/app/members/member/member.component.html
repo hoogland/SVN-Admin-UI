@@ -1,64 +1,59 @@
 <div *ngIf="member" class="row hidden-print">
   <div class="col-md-12">
     <h1 class="hidden-print">Leden bewerken</h1>
-    <button routerLink="/members" class="btn btn-secondary">Terug</button>
-    <fieldset>
+    <fieldset class="col-md-6">
       <!-- Form Name -->
       <legend>
-        {{member.achternaam}}
-      </legend>
+        <button routerLink="/members" class="btn btn-secondary">Terug</button>
+         {{member.achternaam}}
+     </legend>
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="memberKNSB">KNSB</label>
-        <div class="col-md-4">
-          <input id="memberKNSB" name="memberKNSB" type="text" placeholder="KNSB" class="form-control input-md" value="">{{member.knsb}}
-
+        <label class="col-md-6 control-label" for="memberKNSB">KNSB</label>
+        <div class="col-md-6">
+          <input [(ngModel)]="member.knsb" name="memberKNSB" type="text" placeholder="KNSB Nummer" class="form-control input-md">
         </div>
       </div>
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="memberInitials">Voorletter(s)</label>
-        <div class="col-md-4">
-          <input id="memberInitials" name="memberInitials" type="text" placeholder="Voorletter(s)" class="form-control input-md">{{member.voorletters}}
-
+        <label class="col-md-6 control-label" for="memberInitials">Voorletter(s)</label>
+        <div class="col-md-6">
+          <input [(ngModel)]="member.voorletters" name="memberInitials" type="text" placeholder="Voorletter(s)" class="form-control input-md">
         </div>
       </div>
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="memberFirstname">Voornaam</label>
-        <div class="col-md-4">
-          <input id="memberFirstname" name="memberFirstname" type="text" placeholder="Voornaam" class="form-control input-md">{{member.voornaam}}
-
+        <label class="col-md-6 control-label" for="memberFirstname">Voornaam</label>
+        <div class="col-md-6">
+          <input [(ngModel)]="member.voornaam" name="memberFirstname" type="text" placeholder="Voornaam" class="form-control input-md">
         </div>
       </div>
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="memberMiddlename">Tussenvoegsel</label>
-        <div class="col-md-4">
-          <input id="memberMiddlename" name="memberMiddlename" type="text" placeholder="Tussenvoegsel" class="form-control input-md">{{member.tussenvoegsel}}
-
+        <label class="col-md-6 control-label" for="memberMiddlename">Tussenvoegsel</label>
+        <div class="col-md-6">
+          <input [(ngModel)]="member.tussenvoegsel" name="memberMiddlename" type="text" placeholder="Tussenvoegsel" class="form-control input-md">
         </div>
       </div>
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="memberSurname">Achternaam</label>
-        <div class="col-md-4">
-          <input id="memberSurname" name="memberSurname" type="text" placeholder="Achternaam" class="form-control input-md">          {{member.achternaam}}
+        <label class="col-md-6 control-label" for="memberSurname">Achternaam</label>
+        <div class="col-md-6">
+          <input [(ngModel)]="member.achternaam" name="memberSurname" type="text" placeholder="Achternaam" class="form-control input-md">
         </div>
       </div>
 
       <!-- Button -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="send"></label>
-        <div class="col-md-4">
-          <button class="btn btn-success">Opslaan</button>
+        <label class="col-md-6 control-label" for="send"></label>
+        <div class="col-md-6">
+          <button class="btn btn-success" (click)="save()">Opslaan</button>
         </div>
       </div>
-
     </fieldset>
   </div>
 </div>

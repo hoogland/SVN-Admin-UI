@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -7,7 +8,7 @@ import { Player } from '../Player';
 
 @Injectable()
 export class PlayerService {
-  private apiUrl = "http://svn.local/API/v1/index.php/members";
+  private apiUrl = environment.apiUrl + "/members";
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

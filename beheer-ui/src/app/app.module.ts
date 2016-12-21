@@ -16,6 +16,7 @@ import { MembersComponent } from './members/members.component';
 
 import { PlayerService } from './members/member.service';
 import { SeasonService } from './season.service';
+import { TeamService } from './external/team.service';
 import { MemberComponent } from './members/member/member.component';
 import { ExternalMatchesComponent } from './external/external-matches/external-matches.component';
 
@@ -34,7 +35,11 @@ import { ExternalMatchesComponent } from './external/external-matches/external-m
     HttpModule,
     AppRoutingModule
   ],
-  providers: [PlayerService, SeasonService],
+  providers: [
+    PlayerService,
+    SeasonService,
+    TeamService
+  ],
   bootstrap: [AppComponent]
 })
 

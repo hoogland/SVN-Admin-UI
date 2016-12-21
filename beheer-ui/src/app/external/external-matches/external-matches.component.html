@@ -11,3 +11,13 @@
     </div>
   </div>
 </div>
+<div *ngIf="seasonService.seasonSelect" class="submenu">
+  <div class="menuLink" *ngFor="let team of teamService.teams" (click)="teamService.teamSelect = team">
+    <div class="" >
+          {{team.naam}}
+    </div>
+  </div>
+</div>
+<div *ngIf="teamService.teamSelect">sdfsdf
+{{teamService.teamSelect.naam}}
+</div>

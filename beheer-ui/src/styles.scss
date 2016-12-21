@@ -1,3 +1,7 @@
+$greyLight: #f3f3f3;
+$greyDark: #555;
+$primary: #020731;
+
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: Arial;
@@ -15,6 +19,27 @@ a{
   -moz-border-radius: 0px;
   border-radius: 0px; }
 
-  .panel-body{
-      
+  .submenu{
+      border-bottom: 1px solid $greyLight;
+      height: 40px;
+
+      .menuLink{
+          float: left;
+          border-bottom: 3px solid transparent;
+          box-sizing: border-box;
+          font-size: 10pt;
+          color: $greyDark;
+          line-height: 37px;
+          padding: 0 20px;
+
+          &:hover{
+              cursor: pointer;
+              border-bottom: 3px solid $greyDark;
+          }
+
+          .active{
+              color: black;
+              border-bottom: 3px solid $primary;
+          }
+      }
   }

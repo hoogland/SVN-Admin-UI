@@ -10,9 +10,9 @@ import { Season } from './season';
 export class SeasonService {
   private apiUrl = environment.apiUrl + "/seasons";
   private headers = new Headers({ 'Content-Type': 'application/json' });
+  
   selectedSeason: Season;
   seasons: Season[];
-  count = 0;
 
   constructor(private http: Http) {
     this.getSeasons("start");

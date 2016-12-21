@@ -1,4 +1,5 @@
 $greyLight: #f3f3f3;
+$greyMiddle: #aaa;
 $greyDark: #555;
 $primary: #020731;
 
@@ -34,10 +35,10 @@ a{
 
           &:hover{
               cursor: pointer;
-              border-bottom: 3px solid $greyDark;
+              border-bottom: 3px solid $greyMiddle;
           }
 
-          .active{
+          &.active{
               color: black;
               border-bottom: 3px solid $primary;
           }

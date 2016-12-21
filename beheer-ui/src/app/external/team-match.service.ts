@@ -4,25 +4,21 @@ import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Team } from '../team';
+import { TeamMatch } from '../team-match'
 
 @Injectable()
-export class TeamService {
-  private apiUrl = environment.apiUrl + "/external/teams";
+export class TeamMatchService {
+  private apiUrl = environment.apiUrl + "/external"
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
-  selectedTeam: Team;
-  teams: Team[];
+  matches: TeamMatch[];
 
+  constructor(private http: Http) { }
 
-  constructor(private http: Http) {
-    this.getTeams();
-  }
-
-  getTeams() {
-    this.http.get(this.apiUrl)
+  getTeamMatches(seasonId: number, teamId: number) {
+    this.http.get(this.apiUrl + "/seasons/" + seasonId + "/teams/" + teamId + "/matches")
       .toPromise()
-      .then(response => this.teams = response.json() as Team[])
+      .then(response => this.matches = response.json() as TeamMatch[])
       .catch(this.handleError);
   }
 
@@ -30,5 +26,4 @@ export class TeamService {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
-
 }

@@ -17,8 +17,10 @@ import { MembersComponent } from './members/members.component';
 import { PlayerService } from './members/member.service';
 import { SeasonService } from './season.service';
 import { TeamService } from './external/team.service';
+import { TeamMatchService } from './external/team-match.service';
 import { MemberComponent } from './members/member/member.component';
 import { ExternalMatchesComponent } from './external/external-matches/external-matches.component';
+import { ExternalComponent } from './external/external.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ExternalMatchesComponent } from './external/external-matches/external-m
     ToolComponent,
     MembersComponent,
     MemberComponent,
-    ExternalMatchesComponent
+    ExternalMatchesComponent,
+    ExternalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ExternalMatchesComponent } from './external/external-matches/external-m
   providers: [
     PlayerService,
     SeasonService,
-    TeamService
+    TeamService,
+    TeamMatchService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,21 @@
+<div *ngIf="!seasonService.seasonSelect">
+  <h1>Seizoenen</h1>
+  <p>Selecteer eerst een seizoen</p>
+  <div class="col-md-2" *ngFor="let season of seasonService.seasons">
+    <div class="panel panel-default tile" (click)="seasonService.seasonSelect = season">
+      <a>
+        <div class="panel-body ng-binding">
+          {{season.naam}}
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div *ngIf="seasonService.seasonSelect" class="submenu">
+  <div class="menuLink" *ngFor="let team of teamService.teams" (click)="teamService.teamSelect = team" [routerLink]="['/extern/seasons/',seasonService.seasonSelect.id, 'teams', team.id, 'matches']" routerLinkActive="active">
+    <div class="">
+      {{team.naam}}
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

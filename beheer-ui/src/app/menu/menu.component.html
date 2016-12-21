@@ -42,11 +42,16 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="compExternal.php?seizoen="><span class="fa fa-road"></span> Extern</a></li>
-                <li ><a routerLink="/tools">Tools</a></li>
+                <li><a routerLink="/extern"><span class="fa fa-road"></span> Extern</a></li>
+                <li><a routerLink="/tools">Tools</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
+                    <select class="form-control" [(ngModel)]="seasonService.seasonSelect" name="seasonSelect">
+                        <option *ngFor="let season of seasonService.seasons" [ngValue]="season">
+                        {{season.naam}}
+                        </option>
+                    </select>
                 </div>
             </form>
         </div>

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ToolComponent } from '../tool/tool.component';
 import { MembersComponent } from '../members/members.component';
 import { MemberComponent } from '../members/member/member.component';
+import { ExternalMatchesComponent } from '../external/external-matches/external-matches.component';
 
 
 
@@ -15,10 +16,11 @@ const routes: Routes = [
  // { path: 'config/seasons',  component: seasonsComponent },
  // { path: 'config/seasons/:id',  component: seasonComponent },
  // { path: 'intern',  component: DashboardComponent },
- // { path: 'extern',  component: DashboardComponent },
+  { path: 'extern',  component: ExternalMatchesComponent },
   { path: 'tools',  component: ToolComponent },
 
 ];
+
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes, {useHash: true}) ],

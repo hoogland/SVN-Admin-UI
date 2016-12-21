@@ -15,7 +15,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MembersComponent } from './members/members.component';
 
 import { PlayerService } from './members/member.service';
+import { SeasonService } from './season.service';
 import { MemberComponent } from './members/member/member.component';
+import { ExternalMatchesComponent } from './external/external-matches/external-matches.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MemberComponent } from './members/member/member.component';
     MenuComponent,
     ToolComponent,
     MembersComponent,
-    MemberComponent
+    MemberComponent,
+    ExternalMatchesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { MemberComponent } from './members/member/member.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [PlayerService],
+  providers: [PlayerService, SeasonService],
   bootstrap: [AppComponent]
 })
 

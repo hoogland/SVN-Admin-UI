@@ -7,6 +7,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
+//External libraries
+import { MyDatePickerModule } from 'mydatepicker';
+
 //Different views
 import { ToolComponent } from './tool/tool.component';
 
@@ -18,9 +21,11 @@ import { PlayerService } from './members/member.service';
 import { SeasonService } from './season.service';
 import { TeamService } from './external/team.service';
 import { TeamMatchService } from './external/team-match.service';
+import { ExternalService } from './external/external.service';
 import { MemberComponent } from './members/member/member.component';
 import { ExternalMatchesComponent } from './external/external-matches/external-matches.component';
 import { ExternalComponent } from './external/external.component';
+import { ExternalClassFilterPipe } from './pipes/external-class-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -30,19 +35,22 @@ import { ExternalComponent } from './external/external.component';
     MembersComponent,
     MemberComponent,
     ExternalMatchesComponent,
-    ExternalComponent
+    ExternalComponent,
+    ExternalClassFilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MyDatePickerModule
   ],
   providers: [
     PlayerService,
     SeasonService,
     TeamService,
-    TeamMatchService
+    TeamMatchService,
+    ExternalService,
   ],
   bootstrap: [AppComponent]
 })

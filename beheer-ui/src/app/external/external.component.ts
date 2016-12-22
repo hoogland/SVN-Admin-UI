@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ExternalService } from './external.service';
 import { SeasonService } from '../season.service';
 import { Season } from '../season';
 import { TeamService } from './team.service';
@@ -14,7 +15,8 @@ export class ExternalComponent implements OnInit {
 
   constructor(
     private seasonService: SeasonService,
-    private teamService: TeamService
+    private teamService: TeamService,
+    private externalService: ExternalService,
   )
   { }
 

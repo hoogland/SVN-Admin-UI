@@ -19,3 +19,53 @@
     </tbody>
   </table>
 </div>
+<div class="col-md-6">
+  <h2>Nieuwe wedstrijd</h2>
+  <table class="table col-md-6">
+    <tr>
+      <td>Tegenstander</td>
+      <td><input class="form-control" type="text" [(ngModel)]="newMatch.tegenstander" name="score"></td>
+    </tr>
+    <tr>
+      <td>Datum</td>
+      <td>
+        <my-date-picker [locale]="nl" (dateChanged)="onDateChanged($event)"></my-date-picker>
+      </td>
+    </tr>
+    <tr>
+      <td>Klasse</td>
+      <td>
+        <select class="form-control"  [(ngModel)]="newMatch.groupId" name="groupId">
+          <optgroup label="RSB">
+            <option *ngFor="let class of externalService.classes | externalClassFilter: 0" value="{{class.id}}">{{class.groep}}</option>
+          </optgroup>
+          <optgroup label="KNSB">
+            <option *ngFor="let class of externalService.classes | externalClassFilter: 1" value="{{class.id}}">{{class.groep}}</option>
+          </optgroup>
+         </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Thuis/Uit</td>
+      <td>
+        <select class="form-control" [(ngModel)]="newMatch.uitwedstrijd" name="uitwedstrijd">
+          <option value="0">Thuis</option>
+          <option value="1">Uit</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Score</td>
+      <td><input class="form-control" type="text" [(ngModel)]="newMatch.score" name="score"></td>
+    </tr>
+    <tr>
+      <td>Score tegenstander</td>
+      <td><input class="form-control" type="text" [(ngModel)]="newMatch.scoreTegenstander" name="scoreTegenstander"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button class="btn btn-success pull-right" (click)="CreateNewMatch()">Opslaan</button>
+      </td>
+    </tr>
+  </table>
+</div>

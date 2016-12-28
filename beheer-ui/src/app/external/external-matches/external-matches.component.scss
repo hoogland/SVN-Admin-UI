@@ -1,0 +1,9 @@
+@import '../../../colors';
+
+.teamMatch{
+    border-left: 4px solid transparent;
+    &:hover{
+        cursor: pointer;
+        border-left: 4px solid $primary;
+    }
+}

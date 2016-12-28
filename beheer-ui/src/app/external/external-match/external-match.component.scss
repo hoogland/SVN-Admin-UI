@@ -1,0 +1,21 @@
+@import '../../../colors';
+
+.header{
+    height: 40px;
+    background-color: $primary;
+    color: white;
+    font-size: 20px;
+    font-weight: regular;
+    line-height: 40px;
+
+    margin-left: -30px;
+    margin-right: -30px;
+    width: calc(100% + 60px);
+}
+
+.col-xs-10{
+    padding-left: 0px;
+}
+.col-xs-2{
+        padding-right: 0px;
+}

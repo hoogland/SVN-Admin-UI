@@ -26,6 +26,7 @@ import { MemberComponent } from './members/member/member.component';
 import { ExternalMatchesComponent } from './external/external-matches/external-matches.component';
 import { ExternalComponent } from './external/external.component';
 import { ExternalClassFilterPipe } from './pipes/external-class-filter.pipe';
+import { ExternalMatchComponent } from './external/external-match/external-match.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ExternalClassFilterPipe } from './pipes/external-class-filter.pipe';
     MemberComponent,
     ExternalMatchesComponent,
     ExternalComponent,
-    ExternalClassFilterPipe
+    ExternalClassFilterPipe,
+    ExternalMatchComponent
   ],
   imports: [
     BrowserModule,

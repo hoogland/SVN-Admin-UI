@@ -1,7 +1,4 @@
-$greyLight: #f3f3f3;
-$greyMiddle: #aaa;
-$greyDark: #555;
-$primary: #020731;
+@import 'colors';
 
 /* You can add global styles to this file, and also import other style files */
 body{
@@ -13,6 +10,12 @@ body{
 
 a{
     cursor: pointer;
+}
+
+h2{
+    span{
+        font-size: 18px;
+    }
 }
 
 .form-control, .btn {

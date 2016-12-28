@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody *ngIf="TeamMatchService.matches">
-      <tr *ngFor="let teamMatch of TeamMatchService.matches">
+      <tr class="teamMatch" *ngFor="let teamMatch of TeamMatchService.matches" [routerLink]="['/extern/seasons/',seasonService.seasonSelect.id, 'teams', teamService.teamSelect.id, 'matches', teamMatch.id]">
         <td>{{teamMatch.datum}}</td>
         <td>{{teamMatch.tegenstander}}</td>
         <td>{{teamMatch.uitwedstrijd ? 'Uit' : 'Thuis'}}</td>

@@ -1,0 +1,68 @@
+<div class="col-md-12" *ngIf="teamMatch">
+  <h2>
+    {{teamMatch.tegenstander}}
+    <span>({{teamMatch.datum}})</span>
+    <button class="btn btn-success pull-right" (click)="SaveTeamMatch()">Opslaan</button>
+  </h2>
+  <div class="col-md-12" class="header col-md-12" *ngIf="teamMatch">
+    <div class="col-md-12">Details</div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <td>Datum</td>
+        <td>
+          <my-date-picker [locale]="nl" [options]="myDatePickerOptions" [selDate]="teamMatch.datum" (dateChanged)="onDateChanged($event)"></my-date-picker>
+        </td>
+        <td>Klasse</td>
+        <td>
+          <select class="form-control" [(ngModel)]="teamMatch.groupId" name="groupId">
+          <optgroup label="RSB">
+            <option *ngFor="let class of externalService.classes | externalClassFilter: 0" value="{{class.id}}">{{class.groep}}</option>
+          </optgroup>
+          <optgroup label="KNSB">
+            <option *ngFor="let class of externalService.classes | externalClassFilter: 1" value="{{class.id}}">{{class.groep}}</option>
+          </optgroup>
+         </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Thuis/Uit</td>
+        <td>
+          <select class="form-control" [(ngModel)]="teamMatch.uitwedstrijd" name="uitwedstrijd">
+          <option value="0">Thuis</option>
+          <option value="1">Uit</option>
+        </select>
+        </td>
+        <td>Tegenstander</td>
+        <td>
+          <span class="col-xs-10"><input class="form-control " type="text" [(ngModel)]="teamMatch.tegenstander" name="tegenstander"></span>
+          <span class="col-xs-2"><input class="form-control" type="text" [(ngModel)]="teamMatch.tegenstanderTeam" name="tegenstanderTeam"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Gemiddelde rating</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.teamElo" name="teamElo"></td>
+        <td>Gemiddelde rating</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.tegenstanderElo" name="tegenstanderElo"></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td>Score</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.score" name="score"></td>
+        <td>Score tegenstander</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.scoreTegenstander" name="scoreTegenstander"></td>
+      </tr>
+      <tr>
+        <td>Verslag</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.verslag" name="verslag"></td>
+        <td>Verslag tegenstander</td>
+        <td><input class="form-control" type="text" [(ngModel)]="teamMatch.verslagTegenstander" name="verslagTegenstander"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-12" class="header col-md-12">
+    <div class="col-md-12">Partijen</div>
+  </div>
+</div>

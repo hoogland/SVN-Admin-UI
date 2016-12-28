@@ -22,6 +22,12 @@ export class TeamMatchService {
       .catch(this.handleError);
   }
 
+  getTeamMatch(id: number){
+    if(this.matches){
+      return this.matches.find(teamMatch => teamMatch.id === id);
+    }
+  }
+
   createTeamMatch(teamMatch: TeamMatch): Promise<TeamMatch> {
     let apiUrl = this.apiUrl + "/seasons/" + teamMatch.seizoen + "/teams/" + teamMatch.team + "/matches";
     return this.http
@@ -31,6 +37,14 @@ export class TeamMatchService {
       .catch(this.handleError);
   }
 
+  saveTeamMatch(teamMatch: TeamMatch): Promise<TeamMatch> {
+    let apiUrl = this.apiUrl + "/seasons/" + teamMatch.seizoen + "/teams/" + teamMatch.team + "/matches/" + teamMatch.id;
+    return this.http
+      .put(apiUrl, JSON.stringify(teamMatch), { headers: this.headers })
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);

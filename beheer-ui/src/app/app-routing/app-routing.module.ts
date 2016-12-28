@@ -6,6 +6,7 @@ import { MembersComponent } from '../members/members.component';
 import { MemberComponent } from '../members/member/member.component';
 import { ExternalComponent } from '../external/external.component';
 import { ExternalMatchesComponent } from '../external/external-matches/external-matches.component';
+import { ExternalMatchComponent } from '../external/external-match/external-match.component';
 
 
 
@@ -22,9 +23,9 @@ const routes: Routes = [
     component: ExternalComponent,
     children: [
       { path: 'seasons/:seasonId/teams/:teamId/matches', component: ExternalMatchesComponent },
+      { path: 'seasons/:seasonId/teams/:teamId/matches/:teamMatchId', component: ExternalMatchComponent },
     ]
   },
-  //{ path: 'extern/seasons/:seasonId/teams/:teamId/matches/:matchId',  component: ExternalMatchComponent },
   { path: 'tools', component: ToolComponent },
 
 ];

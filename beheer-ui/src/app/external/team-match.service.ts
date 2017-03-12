@@ -54,6 +54,16 @@ export class TeamMatchService {
       .catch(this.handleError);
   }
 
+  saveTeamMatchGames(teamMatch: TeamMatch): Promise<any> {
+    let apiUrl = this.apiUrl + "/seasons/" + teamMatch.seizoen + "/teams/" + teamMatch.team + "/matches/" + teamMatch.id + "/games";
+    return this.http
+      .put(apiUrl, JSON.stringify(this.matchGames), { headers: this.headers })
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
+
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

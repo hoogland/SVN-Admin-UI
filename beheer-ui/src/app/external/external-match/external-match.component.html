@@ -82,7 +82,13 @@
       <tbody>
         <tr *ngFor="let game of teamMatchService.matchGames">
           <td>{{game.bord}}</td>
-          <td>Speler</td>
+          <td>
+            <select class="form-control" [(ngModel)]="game.spelerId">
+              <option *ngFor="let player of playerService.players" [ngValue]="player.id">
+              {{player.tussenvoegsel + " " + player.achternaam + ", " + player.voornaam}}
+              </option>
+            </select>
+          </td>
           <td><input class="form-control ratingInput" type="text" [(ngModel)]="game.spelerElo" name="spelerElo"></td>
           <td>-</td>
           <td><input class="form-control" type="text" [(ngModel)]="game.tegenstanderNaam" name="tegenstanderNaam"></td>

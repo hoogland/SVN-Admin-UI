@@ -31,7 +31,7 @@ export class ExternalMatchComponent implements OnInit {
   ngOnInit() {
     this.parameters = this.route.params.subscribe(params => {
       this.teamMatch = this.teamMatchService.getTeamMatch(+params['teamMatchId']);
-      console.log(this.teamMatch);
+      this.teamMatchService.getTeamMatchGames(+params['seasonId'], +params['teamId'], +params['teamMatchId']);
     });
   }
 

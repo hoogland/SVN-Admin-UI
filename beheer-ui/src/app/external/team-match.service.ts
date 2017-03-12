@@ -12,6 +12,7 @@ export class TeamMatchService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   matches: TeamMatch[];
+  matchGames: any;
 
   constructor(private http: Http) { }
 
@@ -43,6 +44,13 @@ export class TeamMatchService {
       .put(apiUrl, JSON.stringify(teamMatch), { headers: this.headers })
       .toPromise()
       .then(res => res.json())
+      .catch(this.handleError);
+  }
+
+  getTeamMatchGames(seasonId: number, teamId: number, matchId: number) {
+    this.http.get(this.apiUrl + "/seasons/" + seasonId + "/teams/" + teamId + "/matches/" + matchId + "/games")
+      .toPromise()
+      .then(response => this.matchGames = response.json())
       .catch(this.handleError);
   }
 

@@ -4,10 +4,10 @@
     <span>({{teamMatch.datum}})</span>
     <button class="btn btn-success pull-right" (click)="SaveTeamMatch()">Opslaan</button>
   </h2>
-  <div class="col-md-12" class="header col-md-12" *ngIf="teamMatch">
+  <div class="header col-md-12" *ngIf="teamMatch">
     <div class="col-md-12">Details</div>
   </div>
-  <div class="row">
+  <div class="col-md-12">
     <table class="table">
       <tr>
         <td>Datum</td>
@@ -62,7 +62,41 @@
       </tr>
     </table>
   </div>
-  <div class="col-md-12" class="header col-md-12">
+  <div class="header col-md-12">
     <div class="col-md-12">Partijen</div>
+  </div>
+  <div class="col-md-12" *ngIf="teamMatchService.matchGames">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Bord</th>
+          <th>Speler</th>
+          <th>Rating</th>
+          <th></th>
+          <th>Tegenstander</th>
+          <th>KNSB</th>
+          <th>Rating</th>
+          <th>Uitslag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of teamMatchService.matchGames">
+          <td>{{game.bord}}</td>
+          <td>Speler</td>
+          <td><input class="form-control ratingInput" type="text" [(ngModel)]="game.spelerElo" name="spelerElo"></td>
+          <td>-</td>
+          <td><input class="form-control" type="text" [(ngModel)]="game.tegenstanderNaam" name="tegenstanderNaam"></td>
+          <td><input class="form-control knsbInput" type="text" [(ngModel)]="game.tegenstanderKNSB" name="tegenstanderKNSB"></td>
+          <td><input class="form-control ratingInput" type="text" [(ngModel)]="game.tegenstanderElo" name="tegenstanderElo"></td>
+          <td>
+            <select class="form-control scoreInput" [(ngModel)]="game.score" name="score">
+               <option value="0">0 - 1</option>
+               <option value="0.5">½ - ½</option>
+               <option value="1">1 - 0</option>
+         </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

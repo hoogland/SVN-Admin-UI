@@ -10,6 +10,7 @@
 
     margin-left: -30px;
     margin-right: -30px;
+    margin-bottom: 15px;
     width: calc(100% + 60px);
 }
 
@@ -18,4 +19,14 @@
 }
 .col-xs-2{
         padding-right: 0px;
+}
+
+.ratingInput{
+    max-width: 80px;
+}
+.knsbInput{
+    max-width: 100px;
+}
+.scoreInput{
+    max-width: 100px;
 }

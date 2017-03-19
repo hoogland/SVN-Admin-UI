@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { TeamMatch } from '../../team-match';
@@ -28,7 +28,8 @@ export class ExternalMatchComponent implements OnInit {
     private externalService: ExternalService,
     private route: ActivatedRoute,
     private location: Location,
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -53,4 +54,10 @@ export class ExternalMatchComponent implements OnInit {
     this.teamMatchService.saveTeamMatchGames(this.teamMatch).then(result => { console.log(result)})
   }
 
+  DeleteTeamMatch(){
+    this.teamMatchService.deleteTeamMatch(this.teamMatch).then(result => {
+      console.log(result);
+      this.router.navigate(['../../matches'], {relativeTo: this.route});
+    })
+  }
 }

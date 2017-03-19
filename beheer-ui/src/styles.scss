@@ -18,6 +18,10 @@ h2{
     }
 }
 
+.navbar.navbar-default.navbar-fixed-top{
+    background-image: none;
+}
+
 .form-control, .btn {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -47,3 +51,13 @@ h2{
           }
       }
   }
+
+/* Font awesome icons */
+.fa {
+    &.fa-trash{
+        color: $red;
+        &:hover{
+            color: $redDark;
+        }
+    }
+}

@@ -2,7 +2,8 @@
   <h2>
     {{teamMatch.tegenstander}}
     <span>({{teamMatch.datum}})</span>
-    <button class="btn btn-success pull-right" (click)="SaveTeamMatch()">Opslaan</button>
+    <button class="btn btn-danger pull-right" (click)="DeleteTeamMatch()">Verwijderen</button> 
+    <button class="btn btn-success pull-right" (click)="SaveTeamMatch()">Opslaan</button> 
   </h2>
   <div class="header col-md-12" *ngIf="teamMatch">
     <div class="col-md-12">Details</div>

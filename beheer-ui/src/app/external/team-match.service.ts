@@ -47,6 +47,15 @@ export class TeamMatchService {
       .catch(this.handleError);
   }
 
+  deleteTeamMatch(teamMatch: TeamMatch): Promise<TeamMatch> {
+    let apiUrl = this.apiUrl + "/seasons/" + teamMatch.seizoen + "/teams/" + teamMatch.team + "/matches/" + teamMatch.id;
+    return this.http
+      .delete(apiUrl, { headers: this.headers })
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
+
   getTeamMatchGames(seasonId: number, teamId: number, matchId: number) {
     this.http.get(this.apiUrl + "/seasons/" + seasonId + "/teams/" + teamId + "/matches/" + matchId + "/games")
       .toPromise()

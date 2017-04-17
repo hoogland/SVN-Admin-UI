@@ -13,7 +13,7 @@ export class TeamService {
 
   selectedTeam: Team;
   teams: Team[];
-
+  teamSelect: any;
 
   constructor(private http: Http) {
     this.getTeams();

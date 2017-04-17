@@ -20,12 +20,12 @@ export class ExternalMatchesComponent implements OnInit {
   newMatch = new TeamMatch;
 
   constructor(
-    private seasonService: SeasonService,
-    private teamService: TeamService,
-    private TeamMatchService: TeamMatchService,
-    private externalService: ExternalService,
-    private route: ActivatedRoute,
-    private router: Router
+    public seasonService: SeasonService,
+    public teamService: TeamService,
+    public TeamMatchService: TeamMatchService,
+    public externalService: ExternalService,
+    public route: ActivatedRoute,
+    public router: Router
   ) {
   }
 

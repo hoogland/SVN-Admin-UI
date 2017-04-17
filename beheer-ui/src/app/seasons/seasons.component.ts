@@ -12,7 +12,7 @@ export class SeasonsComponent implements OnInit {
   seasons: Season[];
 
   constructor(
-    private seasonService : SeasonService
+    public seasonService : SeasonService
   ) { }
 
   ngOnInit() {

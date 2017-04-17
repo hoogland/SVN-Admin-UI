@@ -4,4 +4,8 @@ export class Player {
     firstname: string;
     middlename: string;
     lastname: string;
+    voorletters: string;
+    voornaam: string;
+    tussenvoegsel: string;
+    achternaam: string;
 }

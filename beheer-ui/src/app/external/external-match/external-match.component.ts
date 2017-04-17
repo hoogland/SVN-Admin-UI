@@ -24,12 +24,12 @@ export class ExternalMatchComponent implements OnInit {
   }
 
   constructor(
-    private teamMatchService: TeamMatchService,
-    private externalService: ExternalService,
-    private route: ActivatedRoute,
-    private location: Location,
-    private MemberService: MemberService,
-    private router: Router
+    public teamMatchService: TeamMatchService,
+    public externalService: ExternalService,
+    public route: ActivatedRoute,
+    public location: Location,
+    public MemberService: MemberService,
+    public router: Router
   ) { }
 
   ngOnInit() {

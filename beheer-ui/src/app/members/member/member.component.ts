@@ -15,7 +15,7 @@ export class MemberComponent implements OnInit {
   member: Player;
 
   constructor(
-    private MemberService: MemberService,
+    public MemberService: MemberService,
     private route: ActivatedRoute,
     private location: Location
   ) { }

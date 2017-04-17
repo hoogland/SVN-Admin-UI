@@ -14,9 +14,9 @@ import { Team } from '../team';
 export class ExternalComponent implements OnInit {
 
   constructor(
-    private seasonService: SeasonService,
-    private teamService: TeamService,
-    private externalService: ExternalService,
+    public seasonService: SeasonService,
+    public teamService: TeamService,
+    public externalService: ExternalService,
   )
   { }
 

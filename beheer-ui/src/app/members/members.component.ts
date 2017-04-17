@@ -14,7 +14,7 @@ export class MembersComponent implements OnInit {
   newMember = new Player();
 
   constructor(
-    private memberService : MemberService
+    public memberService : MemberService
   ) { }
 
   ngOnInit() {

@@ -11,6 +11,7 @@ export class SeasonService {
   private apiUrl = environment.apiUrl + "/seasons";
   private headers = new Headers({ 'Content-Type': 'application/json' });
   
+  seasonSelect : any;
   selectedSeason: Season;
   seasons: Season[];
 

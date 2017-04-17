@@ -7,7 +7,7 @@ import { SeasonService } from '../season.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  constructor(private seasonService : SeasonService) { 
+  constructor(public seasonService : SeasonService) { 
   }
 
   ngOnInit() {

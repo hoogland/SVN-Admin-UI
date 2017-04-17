@@ -29,3 +29,10 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Create packages
+
+#SVN
+ng build --environment=prod --target=production --base-href \"beheer2/\"
+#SVK
+ng build --environment=krimpen --target=production --base-href \"beheer2/\"

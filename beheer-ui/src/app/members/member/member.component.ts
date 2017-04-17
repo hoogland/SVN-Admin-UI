@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Player } from '../../player';
-import { PlayerService } from '../member.service';
+import { MemberService } from '../member.service';
 
 @Component({
   selector: 'app-member',
@@ -15,14 +15,14 @@ export class MemberComponent implements OnInit {
   member: Player;
 
   constructor(
-    private PlayerService: PlayerService,
+    private MemberService: MemberService,
     private route: ActivatedRoute,
     private location: Location
   ) { }
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.PlayerService.getPlayer(+params['id']))
+      .switchMap((params: Params) => this.MemberService.getPlayer(+params['id']))
       .subscribe((member) => {
         this.member = member
         console.log(this.member)
@@ -30,7 +30,7 @@ export class MemberComponent implements OnInit {
   }
 
   save(): void {
-    this.PlayerService.updatePlayer(this.member)
+    this.MemberService.updatePlayer(this.member)
       .then(() => this.goBack());
   }
 

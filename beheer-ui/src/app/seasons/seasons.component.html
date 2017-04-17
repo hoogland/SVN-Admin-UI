@@ -1,0 +1,20 @@
+<h1>Seizoenen</h1>
+<div class="row">
+  <div class="col-md-2">
+    <input class="form-control" placeholder="Naam nieuw seizoen">
+  </div>
+  <div class="col-md-2">
+        <button class="btn btn-success">Seizoen aanmaken</button>
+  </div>
+</div>
+<div class="row">
+<div class="col-md-2" *ngFor="let season of seasonService.seasons">
+  <div class="panel panel-default tile" (click)="seasonService.seasonSelect = season">
+    <a>
+      <div class="panel-body ng-binding">
+        {{season.naam}}
+      </div>
+    </a>
+  </div>
+</div>
+</div>

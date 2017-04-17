@@ -7,6 +7,7 @@ import { MemberComponent } from '../members/member/member.component';
 import { ExternalComponent } from '../external/external.component';
 import { ExternalMatchesComponent } from '../external/external-matches/external-matches.component';
 import { ExternalMatchComponent } from '../external/external-match/external-match.component';
+import { SeasonsComponent } from '../seasons/seasons.component';
 
 
 
@@ -15,8 +16,8 @@ const routes: Routes = [
   { path: 'members', component: MembersComponent },
   { path: 'members/:id', component: MemberComponent },
   // { path: 'config',  component: DashboardComponent },
-  // { path: 'config/seasons',  component: seasonsComponent },
-  // { path: 'config/seasons/:id',  component: seasonComponent },
+   { path: 'config/seasons',  component: SeasonsComponent },
+  //{ path: 'config/seasons/:id',  component: SeasonsComponent },
   // { path: 'intern',  component: DashboardComponent },
   {
     path: 'extern',

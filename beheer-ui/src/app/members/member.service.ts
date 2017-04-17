@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 import { Player } from '../Player';
 
 @Injectable()
-export class PlayerService {
+export class MemberService {
   private apiUrl = environment.apiUrl + "/members";
   private headers = new Headers({ 'Content-Type': 'application/json' });
   players: Player[];

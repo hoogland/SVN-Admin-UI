@@ -85,7 +85,7 @@
           <td>{{game.bord}}</td>
           <td>
             <select class="form-control" [(ngModel)]="game.spelerId">
-              <option *ngFor="let player of playerService.players" [ngValue]="player.id">
+              <option *ngFor="let player of MemberService.players" [ngValue]="player.id">
               {{player.tussenvoegsel + " " + player.achternaam + ", " + player.voornaam}}
               </option>
             </select>

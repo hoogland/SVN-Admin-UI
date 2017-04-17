@@ -17,7 +17,7 @@ import { ToolComponent } from './tool/tool.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MembersComponent } from './members/members.component';
 
-import { PlayerService } from './members/member.service';
+import { MemberService } from './members/member.service';
 import { SeasonService } from './season.service';
 import { TeamService } from './external/team.service';
 import { TeamMatchService } from './external/team-match.service';
@@ -27,6 +27,7 @@ import { ExternalMatchesComponent } from './external/external-matches/external-m
 import { ExternalComponent } from './external/external.component';
 import { ExternalClassFilterPipe } from './pipes/external-class-filter.pipe';
 import { ExternalMatchComponent } from './external/external-match/external-match.component';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ExternalMatchComponent } from './external/external-match/external-match
     ExternalMatchesComponent,
     ExternalComponent,
     ExternalClassFilterPipe,
-    ExternalMatchComponent
+    ExternalMatchComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { ExternalMatchComponent } from './external/external-match/external-match
     MyDatePickerModule
   ],
   providers: [
-    PlayerService,
+    MemberService,
     SeasonService,
     TeamService,
     TeamMatchService,

@@ -7,7 +7,7 @@ import { TeamMatch } from '../../team-match';
 import { TeamMatchService } from '../team-match.service';
 import { ExternalService } from '../external.service';
 
-import { PlayerService } from '../../members/member.service';
+import { MemberService } from '../../members/member.service';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class ExternalMatchComponent implements OnInit {
     private externalService: ExternalService,
     private route: ActivatedRoute,
     private location: Location,
-    private playerService: PlayerService,
+    private MemberService: MemberService,
     private router: Router
   ) { }
 
@@ -36,7 +36,7 @@ export class ExternalMatchComponent implements OnInit {
     this.parameters = this.route.params.subscribe(params => {
       this.teamMatch = this.teamMatchService.getTeamMatch(+params['teamMatchId']);
       this.teamMatchService.getTeamMatchGames(+params['seasonId'], +params['teamId'], +params['teamMatchId']);
-      this.playerService.getPlayers();
+      this.MemberService.getPlayers();
     });
   }
 

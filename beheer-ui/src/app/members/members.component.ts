@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Player } from '../player';
-import { PlayerService } from './member.service';
+import { MemberService } from './member.service';
 
 @Component({
   selector: 'app-members',
@@ -14,7 +14,7 @@ export class MembersComponent implements OnInit {
   newMember = new Player();
 
   constructor(
-    private memberService : PlayerService
+    private memberService : MemberService
   ) { }
 
   ngOnInit() {
